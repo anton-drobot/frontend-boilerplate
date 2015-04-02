@@ -1,0 +1,66 @@
+$screen-width: 960px;
+
+$screen-max-width: 1440px;
+$screen-min-width: 280px;
+
+$screes-xs: 320px - 1;
+$screen-s: 480px - 1;
+$screen-m: 780px - 1;
+$screen-l: 1024px - 1;
+$screen-xl: 1280px - 1;
+
+$screen-margin: 20px;
+
+$box-sizing: border-box;
+
+$vertical-align: baselone;
+
+$default-margin: 20px;
+
+$grid-columns: 12;
+$gutter: 20px;
+
+$font-stack-default: Arial, Tahoma, sans-serif;
+$font-stack-monospace: Menlo, Monaco, Consolas, "Courier New";
+$font-weight-normal: normal;
+$font-weight-bold: bold;
+$font-color: #19191a;
+$font-size: 16px;
+$font-size-small: 80%;
+$font-line-height: 20px;
+
+$link-color: #368cda;
+$link-color-hover: #2f64b6;
+$link-color-active: #da2f0d;
+$link-underline-opacity: 0.3;
+
+$placeholder-color: #777;
+$placeholder-active-color: #c6c6c6;
+
+$selection-background-color: #b3d4fc;
+
+/* Typography */
+$typography-heading-margin-top: $font-line-height * 2;
+$typography-heading-margin-bottom: $font-line-height;
+
+$typography-h1-font-size: 34px;
+$typography-h1-line-height: line-height($typography-h1-font-size);
+$typography-h2-font-size: 22px;
+$typography-h2-line-height: line-height($typography-h2-font-size);
+$typography-h3-font-size: 20px;
+$typography-h3-line-height: line-height($typography-h3-font-size);
+$typography-h4-font-size: 16px;
+$typography-h4-line-height: line-height($typography-h4-font-size);
+$typography-h5-font-size: 15px;
+$typography-h5-line-height: line-height($typography-h5-font-size);
+$typography-h6-font-size: 12px;
+$typography-h6-line-height: line-height($typography-h6-font-size);
+
+$typography-list-margin-bottom: $font-line-height;
+$typography-list-margin-left: 40px;
+
+$typography-definition-list-margin-left: 24px;
+
+$typography-blockquote-margin-bottom: $font-line-height;
+$typography-blockquote-margin-left: 40px;
+$typography-blockquote-padding-left: 24px;

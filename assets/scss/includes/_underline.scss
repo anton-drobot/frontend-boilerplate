@@ -1,0 +1,60 @@
+@mixin underline-actions($color-hover: $link-color-hover, $color-active: $link-color-active, $underline-opacity: $link-underline-opacity) {
+    &:hover {
+        border-bottom-color: rgba($color-hover, $underline-opacity);
+        transition: none;
+    }
+    &:active {
+        border-bottom-color: rgba($color-active, $underline-opacity);
+        transition: none;
+    }
+}
+
+@mixin underline($color: $link-color, $color-hover: $link-color-hover, $color-active: $link-color-active, $underline-opacity: $link-underline-opacity) {
+    border-bottom: 1px solid rgba($color, $underline-opacity);
+    transition: border-color 0.3s ease;
+    @include underline-actions($color-hover, $color-active, $underline-opacity);
+}
+
+@mixin underline-actions-tag($color-hover: $link-color-hover, $color-active: $link-color-active, $underline-opacity: $link-underline-opacity) {
+    &:hover {
+        .underline {
+            border-bottom-color: rgba($color-hover, $underline-opacity);
+            transition: none;
+        }
+    }
+    &:active {
+        .underline {
+            border-bottom-color: rgba($color-active, $underline-opacity);
+            transition: none;
+        }
+    }
+}
+
+@mixin underline-tag($color: $link-color, $color-hover: $link-color-hover, $color-active: $link-color-active, $underline-opacity: $link-underline-opacity) {
+    .underline {
+        border-bottom: 1px solid rgba($color, $underline-opacity);
+    }
+    @include underline-actions-tag($color-hover, $color-active, $underline-opacity);
+}
+
+.underline {
+    border-bottom: 1px solid rgba($link-color, $link-underline-opacity);
+    transition: border-color 0.3s ease;
+    &_null {
+        border-bottom-color: transparent;
+        &:hover,
+        &:active {
+            border-bottom-color: transparent;
+        }
+    }
+    &_dashed {
+        border-bottom-style: dashed;
+    }
+    &_dotted {
+        border-bottom-style: dotted;
+    }
+}
+
+a {
+    @include underline();
+}

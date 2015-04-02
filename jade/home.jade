@@ -1,0 +1,120 @@
+extends layouts/_default
+
+block vars
+    - var title = 'Document'
+    - var description = ''
+
+block content
+    .grid
+        .grid__col-1 One
+        .grid__col-11 Eleven
+    .grid
+        .grid__col-2 Two
+        .grid__col-10 Ten
+    .grid
+        .grid__col-3 Three
+        .grid__col-9 Nine
+    .grid
+        .grid__col-4 Four
+        .grid__col-8 Eight
+    .grid
+        .grid__col-5 Five
+        .grid__col-7 Seven
+    .grid
+        .grid__col-6 Six
+        .grid__col-6 Six
+    .grid
+        .grid__col-7 Seven
+        .grid__col-5 Five
+    .grid
+        .grid__col-8 Eight
+        .grid__col-4 Four
+    .grid
+        .grid__col-9 Nine
+        .grid__col-3 Three
+    .grid
+        .grid__col-10 Ten
+        .grid__col-2 Two
+    .grid
+        .grid__col-11 Eleven
+        .grid__col-1 One
+    .grid
+        .grid__col-12 Twelve
+    .grid
+        .grid__col-1.grid__offset-11 Offset 11
+    .grid
+        .grid__col-2.grid__offset-10 Offset 10
+    .grid
+        .grid__col-3.grid__offset-9 Offset 9
+    .grid
+        .grid__col-4.grid__offset-8 Offset 8
+    .grid
+        .grid__col-5.grid__offset-7 Offset 7
+    .grid
+        .grid__col-6.grid__offset-6 Offset 6
+    .grid
+        .grid__col-7.grid__offset-5 Offset 5
+    .grid
+        .grid__col-8.grid__offset-4 Offset 4
+    .grid
+        .grid__col-9.grid__offset-3 Offset 3
+    .grid
+        .grid__col-10.grid__offset-2 Offset 2
+    .grid
+        .grid__col-11.grid__offset-1 Offset 1
+    form.form
+        .form__row
+            label.form__label(for="exampleInputEmail") Email address
+            input#exampleInputEmail.form__control(type="email", placeholder="Enter email")
+        .form__row
+            label.form__label(for="exampleInputPassword") Password
+            input#exampleInputPassword.form__control(type="password", placeholder="Password")
+        .form__row
+            label.form__label
+                input.form__file.form__file_styled(type="file")
+            p.form__help Example block-level help text here.
+        .form__row
+            textarea.form__control(placeholder="Textarea")
+        .form__row
+            label.form__label.
+                #[input.form__checkbox.form__checkbox_styled(type="checkbox")]
+                Check me out
+        .form__row
+            label.form__label.
+                #[input.form__radio.form__radio_styled(type="radio", name="radio")]
+                Check me out 1
+        .form__row
+            label.form__label.
+                #[input.form__radio.form__radio_styled(type="radio", name="radio")]
+                Check me out 2
+        .form__row
+            label.form__label(for="exampleSelect") Select
+            select#exampleSelect.form__control
+                option 1
+                option 2
+                option 3
+                option 4
+                option 5
+        .form__row
+            button.b-button(type="submit") Submit
+    div
+        h1 I Second That Emotion
+        p
+            | Yeah, lots of people did. Kif might! I just want to talk. It has nothing to do with mating. Fry, that doesn't make sense. You won't have time for sleeping, soldier, not with all the bed making you'll be doing.
+        p
+            | Good news, everyone! I've taught the toaster to feel love! I found what I need. And it's not friends, it's things. Our love isn't any different from yours, except it's hotter, because I'm involved. Oh right. I forgot about the battle. It's toe-tappingly tragic!
+        h2 Fry and the Slurm Factory
+        p
+            | These old Doomsday Devices are dangerously unstable. I'll rest easier not knowing where they are. I barely knew Philip, but as a clergyman I have no problem telling his most intimate friends all about him. That could be 'my' beautiful soul sitting naked on a couch. If I could just learn to play this stupid thing. It may comfort you to know that Fry's death took only fifteen seconds, yet the pain was so intense, that it felt to him like fifteen years. And it goes without saying, it caused him to empty his bowels. Throw her in the brig.
+        h3 The Deep South
+        p
+            | Bender! Ship! Stop bickering or I'm going to come back there and change your opinions manually! Take me to your leader! That's right, baby. I ain't your loverboy Flexo, the guy you love so much. You even love anyone pretending to be him! We don't have a brig. Yep, I remember. They came in last at the Olympics, then retired to promote alcoholic beverages!
+        h4 Kif Gets Knocked Up A Notch
+        p
+            | Meh. Kids don't turn rotten just from watching TV. In our darkest hour, we can stand erect, with proud upthrust bosoms. Well, thanks to the Internet, I'm now bored with sex. Is there a place on the web that panders to my lust for violence? Your best is an idiot! Alright, let's mafia things up a bit. Joey, burn down the ship. Clamps, burn down the crew.
+        h5 A Taste of Freedom
+        p
+            | Kif, I have mated with a woman. Inform the men. But I know you in the future. I cleaned your poop. Stop! Don't shoot fire stick in space canoe! Cause explosive decompression! You know, I was God once. Oh, all right, I am. But if anything happens to me, tell them I died robbing some old man. Stop! Don't shoot fire stick in space canoe! Cause explosive decompression!
+        h6 Less Than Hero
+        p
+            | Kids don't turn rotten just from watching TV. Hello, little man. I will destroy you! But I know you in the future. I cleaned your poop. You can crush me but you can't crush my spirit! You don't know how to do any of those. Morbo can't understand his teleprompter because he forgot how you say that letter that's shaped like a man wearing a hat.

@@ -1,0 +1,37 @@
+.b-button {
+    display: inline-block;
+    padding: 10px 10px 6px 10px;
+    background: #e0e3e5;
+    border: 1px solid #e0e3e5;
+    border-radius: 3px;
+    box-shadow: 0 0 0 2px transparent;
+    font-size: $font-size;
+    line-height: $font-line-height;
+    color: #000;
+    text-align: center;
+    text-decoration: none;
+    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    &:hover,
+    &:focus {
+        background: #f8f8f8;
+        border-color: #f8f8f8;
+        color: #000;
+        text-decoration: none;
+        transition: none;
+    }
+    &:active {
+        background: #e1e1e1;
+        border-color: #e1e1e1;
+        box-shadow: 0 0 0 2px #9bcbff;
+        color: #000;
+        text-decoration: none;
+        transition: none;
+    }
+    &:focus {
+        box-shadow: 0 0 0 2px #9bcbff;
+    }
+    &--block {
+        display: block;
+        width: 100%;
+    }
+}

@@ -1,0 +1,191 @@
+/* Base form styles */
+
+.form {
+    &__row {
+        margin-bottom: $font-line-height;
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+    &__title {}
+    &__field {}
+    &__label {
+        display: inline-block;
+        cursor: pointer;
+    }
+    &__control {
+        display: block;
+        width: 100%;
+        padding: 8px 10px;
+        background: #fff;
+        border: 1px solid #b8b8b8;
+        font-family: $font-stack-default;
+        font-size: $font-size;
+        line-height: $font-line-height;
+    }
+    &__checkbox {}
+    &__radio {}
+    &__file {}
+    &__help {
+        font-size: 14px;
+        line-height: line-height(14px);
+        color: #aeaeae;
+    }
+
+    /* Styles */
+    &__control {
+        border-radius: 3px;
+        box-shadow: 0 0 0 2px transparent;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        &:focus {
+            border-color: #3496ff;
+            box-shadow: 0 0 0 2px #9bcbff;
+            transition: none;
+        }
+    }
+}
+
+input {
+    &.form__control {
+        height: $font-line-height + 8px * 2;
+    }
+}
+
+textarea {
+    &.form__control {
+        height: $font-line-height * 4 + 8px * 2;
+    }
+}
+
+select {
+    &.form__control {
+        height: $font-line-height + 8px * 2;
+    }
+}
+
+input,
+select,
+textarea,
+button {
+    outline: none;
+}
+
+
+/* Checkbox and Radio Styles */
+
+.form__checkbox_styled,
+.form__radio_styled {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+}
+
+.form__control-styled {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background: #f8f8f8 center center no-repeat;
+    background-size: 50% 50%;
+    border: 1px solid #b8b8b8;
+    font-size: $font-size;
+    line-height: $font-line-height;
+    color: #fff;
+    vertical-align: text-bottom;
+    box-shadow: 0 0 0 2px transparent;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hover */
+.form__label:hover .form__control-styled,
+.form__control-styled:hover {
+    background-color: #e1e1e1;
+    color: #fff;
+    transition: none;
+}
+
+/* Focus */
+.form__checkbox_styled:focus ~ .form__control-styled,
+.form__radio_styled:focus ~ .form__control-styled {
+    border-color: #3496ff;
+    box-shadow: 0 0 0 2px #9bcbff;
+    color: #fff;
+    transition: none;
+}
+
+/* Checked state */
+.form__checkbox_styled:checked ~ .form__control-styled,
+.form__radio_styled:checked ~ .form__control-styled {
+    background-color: #3496ff;
+    border-color: #3496ff;
+    color: #fff;
+}
+
+/* Active */
+.form__checkbox_styled:active ~ .form__control-styled,
+.form__radio_styled:active ~ .form__control-styled {
+    background-color: #84c6ff;
+    border-color: #3496ff;
+    color: #fff;
+    transition: none;
+}
+
+
+/* Checkbox */
+.form__checkbox_styled ~ .form__control-styled {
+    border-radius: 3px;
+}
+
+.form__checkbox_styled:checked ~ .form__control-styled {
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgOCA4IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA4IDgiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTYuNCwxTDUuNywxLjdMMi45LDQuNUwyLjEsMy43TDEuNCwzTDAsNC40bDAuNywwLjdsMS41LDEuNWwwLjcsMC43bDAuNy0wLjdsMy41LTMuNWwwLjctMC43TDYuNCwxTDYuNCwxeiINCgkvPg0KPC9zdmc+DQo=);
+}
+
+/* Radio */
+.form__radio_styled ~ .form__control-styled {
+    border-radius: 50%;
+}
+
+.form__radio_styled:checked ~ .form__control-styled {
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgOCA4IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA4IDgiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTQsMUMyLjMsMSwxLDIuMywxLDRzMS4zLDMsMywzczMtMS4zLDMtM1M1LjcsMSw0LDF6Ii8+DQo8L3N2Zz4NCg==);
+}
+
+
+/* File */
+
+.form__file_styled {
+    width: 180px;
+    height: 100%;
+    margin: 0;
+    filter: alpha(opacity=0);
+    opacity: 0;
+}
+
+.form__file-styled-wrapper {
+    display: inline-block;
+    height: 38px;
+    position: relative;
+    cursor: pointer;
+}
+
+.form__file-styled {
+    @extend .b-button;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 5;
+    text-align: left !important;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Focus */
+.form__file_styled:focus ~ .form__file-styled {
+    border-color: #3496ff;
+    box-shadow: 0 0 0 2px #9bcbff;
+}
