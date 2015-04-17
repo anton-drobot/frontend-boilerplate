@@ -1,66 +1,80 @@
-$screen-width: 960px;
+// Размеры документа
 
-$screen-max-width: 1440px;
-$screen-min-width: 280px;
+$screen__width--default: 960px;
+$screen__width--min: 280px;
+$screen__width--max: 1440px;
 
-$screes-xs: 320px - 1;
-$screen-s: 480px - 1;
-$screen-m: 780px - 1;
-$screen-l: 1024px - 1;
-$screen-xl: 1280px - 1;
+$screen__breakpoint--xs: 320px;
+$screen__breakpoint--s: 480px;
+$screen__breakpoint--m: 780px;
+$screen__breakpoint--l: 1024px;
+$screen__breakpoint--xl: 1280px;
 
-$screen-margin: 20px;
+$screen__margin: 20px;
+
+// Глобальные настройки документа
 
 $box-sizing: border-box;
+$vertical-align: baseline;
+//$default-margin: 20px;
 
-$vertical-align: baselone;
+// Выделение текста
 
-$default-margin: 20px;
+$selection__background-color: #b3d4fc;
 
-$grid-columns: 12;
-$gutter: 20px;
+// Плэйсхолдеры
 
-$font-stack-default: Arial, Tahoma, sans-serif;
-$font-stack-monospace: Menlo, Monaco, Consolas, "Courier New";
-$font-weight-normal: normal;
-$font-weight-bold: bold;
-$font-color: #19191a;
-$font-size: 16px;
-$font-size-small: 80%;
-$font-line-height: 20px;
+$placeholder__color--default: #777;
+$placeholder__color--active: #c6c6c6;
 
-$link-color: #368cda;
-$link-color-hover: #2f64b6;
-$link-color-active: #da2f0d;
-$link-underline-opacity: 0.3;
+// Сетка
 
-$placeholder-color: #777;
-$placeholder-active-color: #c6c6c6;
+$grid__columns: 12;
+$grid__gutter: 20px;
 
-$selection-background-color: #b3d4fc;
+// Типографика
 
-/* Typography */
-$typography-heading-margin-top: $font-line-height * 2;
-$typography-heading-margin-bottom: $font-line-height;
+$font__family--default: Arial, Tahoma, sans-serif;
+$font__family--monospace: Menlo, Monaco, Consolas, "Courier New", monospace;
+$font__color--base: #000;
+$font__size--root: 10px;
+$font__size--base: 1.6rem;
+$font__size--small: 1.2rem;
+$font__line-height: 2rem;
 
-$typography-h1-font-size: 34px;
-$typography-h1-line-height: line-height($typography-h1-font-size);
-$typography-h2-font-size: 22px;
-$typography-h2-line-height: line-height($typography-h2-font-size);
-$typography-h3-font-size: 20px;
-$typography-h3-line-height: line-height($typography-h3-font-size);
-$typography-h4-font-size: 16px;
-$typography-h4-line-height: line-height($typography-h4-font-size);
-$typography-h5-font-size: 15px;
-$typography-h5-line-height: line-height($typography-h5-font-size);
-$typography-h6-font-size: 12px;
-$typography-h6-line-height: line-height($typography-h6-font-size);
+// Ссылки
 
-$typography-list-margin-bottom: $font-line-height;
-$typography-list-margin-left: 40px;
+$link__color--default: #368cda;
+$link__color--hover: #2f64b6;
+$link__color--active: #da2f0d;
+$link__underline--opacity-default: 0.3;
+$link__underline--opacity-hover: 0.5;
 
-$typography-definition-list-margin-left: 24px;
+// Заголовки
 
-$typography-blockquote-margin-bottom: $font-line-height;
-$typography-blockquote-margin-left: 40px;
-$typography-blockquote-padding-left: 24px;
+$heading__margin--top: $font__line-height * 2;
+$heading__margin--bottom: $font__line-height;
+$heading__h1--font-size: 3.4rem;
+$heading__h1--line-height: line-height($heading__h1--font-size);
+$heading__h2--font-size: 2.2rem;
+$heading__h2--line-height: line-height($heading__h2--font-size);
+$heading__h3--font-size: 2rem;
+$heading__h3--line-height: line-height($heading__h3--font-size);
+$heading__h4--font-size: 1.6rem;
+$heading__h4--line-height: line-height($heading__h4--font-size);
+$heading__h5--font-size: 1.4rem;
+$heading__h5--line-height: line-height($heading__h5--font-size);
+$heading__h6--font-size: 1.2rem;
+$heading__h6--line-height: line-height($heading__h6--font-size);
+
+// Списки
+
+$list__margin--bottom: $font__line-height;
+$list__margin--left: $font__line-height * 2;
+$definition-list__margin--left: $font__line-height;
+
+// Цитаты
+
+$blockquote__margin--bottom: $font__line-height;
+$blockquote__margin--left: $font__line-height * 2;
+$blockquote__padding--left: $font__line-height;

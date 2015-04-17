@@ -1,0 +1,10 @@
+.wrapper {
+    max-width: $screen__width--max;
+    min-width: $screen__width--min;
+    width: auto;
+    margin: 0 auto;
+    &__margin {
+        margin-left: $screen__margin;
+        margin-right: $screen__margin;
+    }
+}

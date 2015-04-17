@@ -1,31 +1,50 @@
-@mixin placeholder-styles($color: $placeholder-color) {
-    color: $color;
-    text-overflow: ellipsis;
+@mixin include-fonts-item($family, $filename, $weight, $style) {
+    @font-face {
+        font-family: $family;
+        src: url('../fonts/#{$filename}.eot');
+        src: url('../fonts/#{$filename}.eot?#iefix') format('embedded-opentype'),
+            url('../fonts/#{$filename}.woff') format('woff'),
+            url('../fonts/#{$filename}.ttf') format('truetype');
+        font-weight: $weight;
+        font-style: $style;
+    }
 }
 
-@mixin placeholder($color: $placeholder-color, $active-color: $placeholder-active-color) {
-    &::-webkit-input-placeholder {
-        @include placeholder-styles($color);
+// Загрузка шрифтов
+//
+// @param {String} $family
+// @param {List} $fonts
+// @example
+//     $family: 'Lato';
+//     $fonts: (
+//         ('Lato-Light', 300, normal),
+//         ('Lato-Regular', normal, normal),
+//         ('Lato-Italic', normal, italic),
+//         ('Lato-Medium', 500, normal),
+//         ('Lato-Bold', bold, normal),
+//         ('Lato-BoldItalic', bold, italic),
+//         ('Lato-Black', 900, normal)
+//     );
+//     @include include-fonts($family, $fonts);
+@mixin include-fonts($family, $fonts) {
+    @for $i from 1 through length($fonts) {
+        $item: nth($fonts, $i);
+        @include include-fonts-item($family, nth($item, 1), nth($item, 2), nth($item, 3))
     }
-    &::-moz-placeholder {
-        @include placeholder-styles($color);
-    }
-    &:-ms-input-placeholder {
-        @include placeholder-styles($color);
+}
+
+@mixin placeholder($color: $placeholder__color--default, $active-color: $placeholder__color--active) {
+    &::placeholder {
+        color: $color;
+        text-overflow: ellipsis;
     }
     &.placeholder {
-        @include placeholder-styles($color);
+        color: $color;
+        text-overflow: ellipsis;
     }
-    &:focus::-webkit-input-placeholder {
+    &:focus::placeholder {
         color: $active-color;
     }
-    &:focus::-moz-placeholder {
-        color: $active-color;
-    }
-    &:focus:-ms-input-placeholder {
-        color: $active-color;
-    }
-    &.placeholder:active,
     &.placeholder:focus {
         color: $active-color;
     }

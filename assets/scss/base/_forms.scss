@@ -1,0 +1,68 @@
+/* Base form styles */
+
+.form {
+    &__row {
+        margin-bottom: $font__line-height;
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+    &__title {}
+    &__field {}
+    &__label {
+        display: inline-block;
+        cursor: pointer;
+    }
+    &__control {
+        display: block;
+        width: 100%;
+        &--inline {
+            display: inline-block;
+        }
+    }
+    &__checkbox {
+        margin-right: 4px;
+    }
+    &__radio {
+        margin-right: 4px;
+    }
+    &__file {}
+    &__help {
+        font-size: 1.4rem;
+        line-height: line-height(1.4rem);
+        color: #aeaeae;
+    }
+    // Styles
+    &__control {
+        padding: 8px 10px;
+        background: #fff;
+        border: 1px solid #b8b8b8;
+        font-family: $font__family--default;
+        font-size: $font__size--base;
+        line-height: $font__line-height;
+        border-radius: 3px;
+        transition: border-color 0.3s ease-out;
+        &:focus {
+            border-color: #3496ff;
+            transition: none;
+        }
+    }
+}
+
+input {
+    &.form__control {
+        height: calc(#{$font__line-height} + 8px * 2);
+    }
+}
+
+textarea {
+    &.form__control {
+        height: calc(#{$font__line-height} * 4 + 8px * 2);
+    }
+}
+
+select {
+    &.form__control {
+        height: calc(#{$font__line-height} + 8px * 2);
+    }
+}

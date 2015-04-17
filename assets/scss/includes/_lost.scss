@@ -428,17 +428,3 @@ $rtl: false !default;
 @function _strip-units($number) {
     @return $number / ($number * 0 + 1);
 }
-
-
-// A helper class used for centering by default values.
-
-.container {
-    @include container;
-}
-
-
-// A helper class used to create rows with default values.
-
-.row {
-    @include row;
-}

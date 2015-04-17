@@ -1,5 +1,3 @@
-// _decimal.scss | MIT License | gist.github.com/terkel/4373420
-
 // Round a number to specified digits.
 //
 // @param  {Number} $number A number to round
@@ -76,5 +74,5 @@
 }
 
 @function line-height($size) {
-    @return $font-line-height * ceil($size / $font-line-height);
+    @return $font__line-height * ceil($size / $font__line-height);
 }

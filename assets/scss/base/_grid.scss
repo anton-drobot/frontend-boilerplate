@@ -1,0 +1,44 @@
+.grid {
+    @include clearfix;
+    @include row();
+    @for $i from 1 through $grid__columns {
+        &__col-#{$i} {
+            @include column($i/12);
+        }
+    }
+    @for $i from 1 through $grid__columns {
+        &__offset-#{$i} {
+            @include offset($i/12);
+        }
+    }
+    &__col-xs {
+        @media (max-width: $screen__breakpoint--xs) {
+            @include column(1/1);
+            @include offset(0/1);
+        }
+    }
+    &__col-s {
+        @media (max-width: $screen__breakpoint--s) {
+            @include column(1/1);
+            @include offset(0/1);
+        }
+    }
+    &__col-m {
+        @media (max-width: $screen__breakpoint--m) {
+            @include column(1/1);
+            @include offset(0/1);
+        }
+    }
+    &__col-l {
+        @media (max-width: $screen__breakpoint--l) {
+            @include column(1/1);
+            @include offset(0/1);
+        }
+    }
+    &__col-xl {
+        @media (max-width: $screen__breakpoint--xl) {
+            @include column(1/1);
+            @include offset(0/1);
+        }
+    }
+}

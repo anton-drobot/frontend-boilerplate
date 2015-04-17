@@ -2,32 +2,40 @@
 @import "core/variables";
 @import "core/mixins";
 
-@import "includes/fonts";
-@import "includes/defaults";
-@import "includes/typography";
+@import "includes/lost";
+
+@import "base/fonts";
+@import "base/defaults";
+@import "base/grid";
+@import "base/typography";
+@import "base/forms";
+@import "base/tables";
+@import "base/wrapper";
+@import "base/underline";
 
 body {
     background: #fff;
+    font-size: $font__size--base;
 }
 
 p {
-    margin: 0 0 $font-line-height 0;
+    margin: 0 0 $font__line-height 0;
     &:last-child {
         margin-bottom: 0;
     }
 }
 
 a {
-    color: $link-color;
+    color: $link__color--default;
     text-decoration: none;
     transition: color 0.3s ease, border-color 0.3s ease;
     &:hover {
-        color: $link-color-hover;
+        color: $link__color--hover;
         text-decoration: none;
         transition: none;
     }
     &:active {
-        color: $link-color-active;
+        color: $link__color--active;
         text-decoration: none;
         transition: none;
     }
@@ -42,13 +50,4 @@ textarea {
     @include placeholder();
 }
 
-@import "includes/helpers";
-@import "includes/lost";
-@import "includes/grid";
-@import "includes/table";
-@import "includes/form";
-@import "includes/underline";
-
-@import "blocks/b-wrapper";
-@import "blocks/b-button";
-@import "blocks/b-icon";
+@import "blocks/*";

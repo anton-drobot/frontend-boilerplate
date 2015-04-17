@@ -3,21 +3,18 @@
  */
 
 :root {
-    /* Box Sizing */
     box-sizing: $box-sizing;
-    /* Fonts */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-family: $font-stack-default;
-    font-size: $font-size;
-    line-height: $font-line-height;
+    font-family: $font__family--default;
+    font-size: $font__size--root;
+    line-height: $font__line-height;
     text-rendering: geometricPrecision;
     text-size-adjust: 100%;
-    color: $font-color;
-    /* Other */
+    color: $font__color--base;
     vertical-align: $vertical-align;
-    overflow-y: scroll;
-    -ms-overflow-style: -ms-autohiding-scrollbar; // IE11+
+    // IE11+
+    -ms-overflow-style: -ms-autohiding-scrollbar;
 }
 
 /**
@@ -45,7 +42,7 @@
  */
 
 ::selection {
-    background: $selection-background-color;
+    background: $selection__background-color;
     text-shadow: none;
 }
 
@@ -203,7 +200,7 @@ mark {
  */
 
 small {
-    font-size: $font-size-small;
+    font-size: $font__size--small;
 }
 
 /**
@@ -212,7 +209,7 @@ small {
 
 sub,
 sup {
-    font-size: $font-size-small;
+    font-size: $font__size--small;
     line-height: 0;
     position: relative;
     vertical-align: $vertical-align;
@@ -249,7 +246,7 @@ svg {
  */
 
 figure {
-    margin: $default-margin ($default-margin * 2);
+    margin: 20px 40px;
 }
 
 /**
@@ -269,7 +266,7 @@ kbd,
 pre,
 samp,
 var {
-    font-family: $font-stack-monospace, monospace;
+    font-family: $font__family--monospace;
 }
 
 /**
@@ -372,8 +369,6 @@ input[type="number"] {
 
 /**
  * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
- * 2. Address `box-sizing` set to `border-box` in Safari and Chrome
- *    (include `-moz` to future-proof).
  */
 
 input {
@@ -494,7 +489,7 @@ blockquote p,
 q {
     &:before,
     &:after {
-        content: '';
+        content: "";
         content: none;
     }
 }
