@@ -9,4 +9,4 @@
     $(function () {
         $('input, textarea').placeholder();
     });
-})(JQuery, document, window);
+})(jQuery, document, window);
