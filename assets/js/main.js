@@ -8,5 +8,7 @@
 
     $(function () {
         $('input, textarea').placeholder();
+
+        $('.form__checkbox--pretty, .form__radio--pretty').after('<span class="form__control-indicator"></span>');
     });
 })(jQuery, document, window);

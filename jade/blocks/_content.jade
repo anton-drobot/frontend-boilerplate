@@ -65,4 +65,18 @@ main.content
                                 | Синий
 
                         .form__row
+                            label.form__label
+                                input.form__checkbox.form__checkbox--pretty(type='checkbox')
+                                | Чекбокс
+
+                        .form__row
+                            label.form__label
+                                input.form__radio.form__radio--pretty(type='radio' name='radio')
+                                | Красный
+                            br
+                            label.form__label
+                                input.form__radio.form__radio--pretty(type='radio' name='radio')
+                                | Синий
+
+                        .form__row
                             button.button(type='submit') Submit
