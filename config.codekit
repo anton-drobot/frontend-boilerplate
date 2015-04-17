@@ -306,6 +306,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
+	"\/home.html": {
+		"fileType": 8192,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/home.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/jade\/blocks\/_content.jade": {
 		"compileDebug": 0,
 		"fileType": 512,
