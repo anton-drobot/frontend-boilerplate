@@ -67,6 +67,13 @@ select {
     }
 }
 
+input,
+select,
+textarea,
+button {
+    outline: none;
+}
+
 /* Pretty checkboxes and radios */
 
 .form {
