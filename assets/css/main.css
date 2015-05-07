@@ -891,6 +891,13 @@ select.form__control {
   height: calc(2rem + 8px * 2);
 }
 
+input,
+select,
+textarea,
+button {
+  outline: none;
+}
+
 /* Pretty checkboxes and radios */
 .form__label {
   position: relative;
@@ -1108,6 +1115,7 @@ textarea.placeholder:focus {
   color: #c6c6c6;
 }
 
+/* No files to import found in includes/* */
 .button {
   display: inline-block;
   padding: 8px 10px;
