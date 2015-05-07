@@ -14,6 +14,9 @@
 @import "base/underline";
 
 body {
+    @if $screen__fluid == false {
+        min-width: $screen__width--default + ($screen__margin * 2);
+    }
     background: #fff;
     font-size: $font__size--base;
 }
