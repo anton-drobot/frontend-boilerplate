@@ -10,11 +10,11 @@
         var bodyClasses = [];
 
         if (!Modernizr.svg) {
-            bodyClasses.push('no-svg')
+            bodyClasses.push('no-svg');
         }
 
         if (!Modernizr.inlinesvg) {
-            bodyClasses.push('no-inlinesvg')
+            bodyClasses.push('no-inlinesvg');
         }
 
         $('html').addClass(bodyClasses.join(' '));
