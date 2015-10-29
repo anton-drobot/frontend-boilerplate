@@ -31,17 +31,38 @@ p {
 
 a {
     color: $link__color--default;
-    text-decoration: none;
-    transition: color .3s ease, border-color .3s ease;
+    @if $link__underline--type == default {
+        text-decoration: underline;
+        transition: color .3s ease-in-out;
+    } @else if $link__underline--type == border {
+        @include underline();
+    } @else if $link__underline--type == none {
+        text-decoration: none;
+        transition: color .3s ease-in-out;
+    }
     &:hover {
         color: $link__color--hover;
-        text-decoration: none;
-        transition: none;
+        @if $link__underline--type == default {
+            text-decoration: underline;
+            transition: none;
+        } @else if $link__underline--type == border {
+            text-decoration: none;
+        } @else if $link__underline--type == none {
+            text-decoration: none;
+            transition: none;
+        }
     }
     &:active {
         color: $link__color--active;
-        text-decoration: none;
-        transition: none;
+        @if $link__underline--type == default {
+            text-decoration: underline;
+            transition: none;
+        } @else if $link__underline--type == border {
+            text-decoration: none;
+        } @else if $link__underline--type == none {
+            text-decoration: none;
+            transition: none;
+        }
     }
 }
 

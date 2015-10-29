@@ -7,7 +7,7 @@
     $actions: true
 ) {
     border-bottom: 1px solid rgba($color, $opacity);
-    transition: border-color .3s ease-out;
+    transition: color .3s ease-in-out, border-color .3s ease-in-out;
     @if $actions == true {
         &:hover {
             border-bottom-color: rgba($color-hover, $opacity-hover);
@@ -35,8 +35,4 @@
     &--dotted {
         border-bottom-style: dotted;
     }
-}
-
-a {
-    @include underline();
 }

@@ -26,7 +26,7 @@ module.exports = {
         resources: 'app/resources/**/*.*'
     },
     watch: {
-        jade: 'app/jade/pages/*.jade',
+        jade: 'app/jade/**/*.jade',
         js: 'app/assets/js/**/*.js',
         scss: 'app/assets/scss/**/*.scss',
         images: 'app/assets/images/**/*.*',

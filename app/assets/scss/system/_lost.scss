@@ -1,6 +1,6 @@
 // Lost Grid v1.1.1 - https://github.com/corysimmons/lost
 
-$gutter: 30px !default;
+$gutter: $grid__gutter !default;
 $breakpoint: 1000px !default;
 $old: false !default;
 $rtl: false !default;
@@ -33,7 +33,7 @@ $rtl: false !default;
 ///   }
 
 @mixin cf() {
-    *zoom: 1;
+    //*zoom: 1; // deleted, because I don't have ie8 support
 
     &:before, &:after {
         content: '';

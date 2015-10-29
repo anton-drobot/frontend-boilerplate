@@ -32,7 +32,7 @@ $placeholder__color--active: #c6c6c6;
 // Сетка
 
 $grid__columns: 12;
-$grid__gutter: 20px;
+$grid__gutter: 30px;
 
 // Типографика
 
@@ -49,6 +49,7 @@ $font__line-height: 2rem;
 $link__color--default: #368cda;
 $link__color--hover: #2f64b6;
 $link__color--active: #da2f0d;
+$link__underline--type: border; // default, border, none
 $link__underline--opacity-default: .3;
 $link__underline--opacity-hover: .5;
 

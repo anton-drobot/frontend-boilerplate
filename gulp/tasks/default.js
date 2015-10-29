@@ -34,9 +34,11 @@ var gulp = require('gulp'),
     del = require('del'),
     runSequence = require('run-sequence'),
     browserSync = require('browser-sync'),
+    plumber = require('gulp-plumber'),
     reload = browserSync.reload,
     paths = require('../paths'),
     config = require('../config'),
+    errorHandler = require('../utils/errorHandler'),
     pkg = require('../../package.json');
 
 gulp.task('webserver', function () {
@@ -49,6 +51,7 @@ gulp.task('clean', function (cb) {
 
 gulp.task('jade:build', function () {
     return gulp.src(paths.app.jade)
+        .pipe(plumber({errorHandler: errorHandler}))
         .pipe(jade())
         .pipe(prettify({
             race_style: 'expand',
@@ -63,6 +66,7 @@ gulp.task('jade:build', function () {
 
 gulp.task('js:build', function () {
     return gulp.src(paths.app.js)
+        .pipe(plumber({errorHandler: errorHandler}))
         .pipe(concat('main.js'))
         .pipe(uglify())
         .pipe(gulp.dest(paths.build.js))
@@ -71,15 +75,17 @@ gulp.task('js:build', function () {
 
 gulp.task('libraries:build', function() {
     return gulp.src(paths.app.libraries)
+        .pipe(plumber({errorHandler: errorHandler}))
         .pipe(gulp.dest(paths.build.libraries))
 });
 
 gulp.task('scss:build', function () {
     return gulp.src(paths.app.scss.src)
+        .pipe(plumber({errorHandler: errorHandler}))
         .pipe(bulkSass())
         .pipe(sass({
             includePaths: [paths.app.scss.includePaths],
-            outputStyle: 'compressed'
+            outputStyle: 'expanded'
         }))
         .pipe(autoprefixer(
             'Android >= ' + pkg.browsers.android,
@@ -99,6 +105,7 @@ gulp.task('scss:build', function () {
 
 gulp.task('sprite:build', function () {
     var spriteData = gulp.src(paths.app.images.sprites)
+        .pipe(plumber({errorHandler: errorHandler}))
         .pipe(spritesmith({
             imgName: 'icons.png',
             cssName: '_icons.scss',
@@ -128,6 +135,7 @@ gulp.task('images:build', function () {
         paths.app.images.src,
         '!' + paths.app.images.sprites
     ])
+        .pipe(plumber({errorHandler: errorHandler}))
         .pipe(imagemin({
             progressive: true,
             interlaced: true,
@@ -139,16 +147,19 @@ gulp.task('images:build', function () {
 
 gulp.task('fonts:build', function() {
     return gulp.src(paths.app.fonts)
+        .pipe(plumber({errorHandler: errorHandler}))
         .pipe(gulp.dest(paths.build.fonts));
 });
 
 gulp.task('resources:build', function() {
     return gulp.src(paths.app.resources)
+        .pipe(plumber({errorHandler: errorHandler}))
         .pipe(gulp.dest(paths.build.resources));
 });
 
 gulp.task('zip', function () {
     return gulp.src(paths.zip.src)
+        .pipe(plumber({errorHandler: errorHandler}))
         .pipe(zip('build.zip'))
         .pipe(gulp.dest(paths.zip.to));
 });
