@@ -18,7 +18,12 @@ npm i
 * Запусти Gulp.js:
 
 ```
-gulp
+gulp --debug
+```
+
+* Сборка в папку `dist`
+```
+gulp build
 ```
 
 * Открой в браузере [`http://localhost:9000/`](http://localhost:9000/).
