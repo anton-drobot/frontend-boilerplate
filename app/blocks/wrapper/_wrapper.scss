@@ -1,0 +1,17 @@
+.wrapper {
+    @if $screen__fluid == false {
+        width: $screen__width--default + ($wrapper__margin * 2);
+    } @else {
+        max-width: $screen__width--max;
+        min-width: $screen__width--min;
+        width: auto;
+    }
+    margin: 0 auto;
+    &__margin {
+        margin-left: $wrapper__margin;
+        margin-right: $wrapper__margin;
+        &--relative {
+            position: relative;
+        }
+    }
+}

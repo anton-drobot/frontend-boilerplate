@@ -1,0 +1,200 @@
+// Заголовки
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 2em;
+    margin-bottom: 1em;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 3.2rem;
+    line-height: 4.3rem;
+}
+
+h2 {
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+}
+
+h4 {
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+}
+
+h5 {
+    font-size: 1.4rem;
+    line-height: 1.9rem;
+}
+
+h6 {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+}
+
+// Параграф
+
+p {
+    margin: 0 0 $font__margin-bottom 0;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+
+// Цитата
+
+blockquote {
+    margin: 0 0 $font__margin-bottom $list__margin--left;
+    font-size: $blockquote__font-size;
+    line-height: $blockquote__line-height;
+}
+
+
+// Адрес
+
+address {
+    font-style: normal;
+}
+
+
+// Списки
+
+ul,
+ol {
+    margin: 0 0 $font__margin-bottom $blockquote__margin--left;
+    li {
+        margin: 0;
+    }
+}
+
+
+// Списки определений
+
+dl {
+    margin: 0 0 $font__margin-bottom 0;
+}
+
+dl dt {
+    font-weight: bold;
+}
+
+dd {
+    margin-left: $list__margin--left;
+}
+
+
+// Форматирование текста
+
+cite {
+    font-style: italic;
+}
+
+s,
+del {
+    text-decoration: line-through;
+}
+
+abbr[title],
+acronym[title],
+dfn[title] {
+    border-bottom: 1px dotted $font__color--base;
+    cursor: help;
+}
+
+strong,
+b {
+    font-weight: bold;
+}
+
+em,
+i {
+    font-style: italic;
+}
+
+ins,
+u {
+    text-decoration: underline;
+}
+
+sub,
+sup {
+    font-size: $font__size--small;
+}
+
+sup {
+    vertical-align: super;
+}
+
+sub {
+    vertical-align: sub;
+}
+
+figcaption {
+    font-style: italic;
+}
+
+mark {
+    background-color: #ffd61e;
+    color: #202020;
+    text-decoration: none;
+}
+
+// Код
+
+pre,
+code,
+kbd,
+samp,
+var,
+output {
+    font-style: normal;
+    font-family: $font__family--monospace;
+}
+
+pre {
+    overflow: auto;
+    background: rgba(0, 0, 0, 0.03);
+    word-wrap: normal;
+}
+
+mark,
+code,
+samp,
+kbd {
+    padding: .2rem .4rem;
+    border-radius: 2px;
+}
+
+code {
+    background: rgba(0, 0, 0, 0.07);
+}
+
+pre code {
+    padding: 0;
+    background: none;
+}
+
+var {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+samp {
+    background: #46a9fc;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+kbd {
+    background: #202020;
+    color: rgba(255, 255, 255, 0.85);
+    white-space: nowrap;
+}

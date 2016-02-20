@@ -1,0 +1,68 @@
+@mixin underline1(
+    $color: $link__color--default,
+    $color-hover: $link__color--hover,
+    $color-active: $link__color--active,
+    $opacity: $link__underline--opacity-default,
+    $opacity-hover: $link__underline--opacity-hover,
+    $actions: true
+) {
+    border-bottom: 1px solid rgba($color, $opacity);
+    transition: color .3s ease-in-out, border-color .3s ease-in-out;
+    @if $actions == true {
+        &:hover {
+            border-bottom-color: rgba($color-hover, $opacity-hover);
+            transition: none;
+        }
+        &:active {
+            border-bottom-color: rgba($color-active, $opacity-hover);
+            transition: none;
+        }
+    }
+}
+
+@mixin underline(
+    $color: $link__color--default,
+    $opacity: $link__underline--opacity-default
+) {
+    border-bottom: 1px solid rgba($color, $opacity);
+}
+
+@mixin underline-actions(
+    $color-hover: $link__color--hover,
+    $color-active: $link__color--active,
+    $opacity-hover: $link__underline--opacity-hover
+) {
+    transition: color .3s ease-in-out, border-color .3s ease-in-out;
+    &:hover {
+        border-bottom-color: rgba($color-hover, $opacity-hover);
+        transition: none;
+    }
+    &:active {
+        border-bottom-color: rgba($color-active, $opacity-hover);
+        transition: none;
+    }
+}
+
+@mixin underline-no-border {
+    &--no-border {
+        border-bottom-color: transparent;
+        transition: none;
+        &:hover,
+        &:active {
+            border-bottom-color: transparent;
+            transition: none;
+        }
+    }
+}
+
+.underline {
+    @include underline();
+    @include underline-actions();
+    @include underline-no-border();
+    &--dashed {
+        border-bottom-style: dashed;
+    }
+    &--dotted {
+        border-bottom-style: dotted;
+    }
+}

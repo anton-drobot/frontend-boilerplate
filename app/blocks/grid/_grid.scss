@@ -1,0 +1,44 @@
+.grid {
+    @include row();
+    @for $i from 1 through $grid__columns {
+        &__col-#{$i} {
+            @include column($i/$grid__columns);
+        }
+    }
+    @for $i from 1 through $grid__columns {
+        &__offset-#{$i} {
+            @include offset($i/$grid__columns);
+        }
+    }
+    // TODO: сделать адаптивную сетку, чтобы менялась ширина колонки, например с 12 на 6 (.grid__col-xs--to-6)
+    &__col-xs {
+        @media (max-width: $screen__breakpoint--xs) {
+            @include column(1/1);
+            @include offset(0/1);
+        }
+    }
+    &__col-s {
+        @media (max-width: $screen__breakpoint--s) {
+            @include column(1/1);
+            @include offset(0/1);
+        }
+    }
+    &__col-m {
+        @media (max-width: $screen__breakpoint--m) {
+            @include column(1/1);
+            @include offset(0/1);
+        }
+    }
+    &__col-l {
+        @media (max-width: $screen__breakpoint--l) {
+            @include column(1/1);
+            @include offset(0/1);
+        }
+    }
+    &__col-xl {
+        @media (max-width: $screen__breakpoint--xl) {
+            @include column(1/1);
+            @include offset(0/1);
+        }
+    }
+}

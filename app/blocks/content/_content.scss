@@ -1,0 +1,79 @@
+.content {
+    max-width: 642px;
+    h1 {
+        font-size: 3.2rem;
+        line-height: 4.3rem;
+    }
+    h2 {
+        font-size: 2.4rem;
+        line-height: 3.2rem;
+    }
+    h3 {
+        font-size: 1.8rem;
+        line-height: 2.4rem;
+    }
+    h4 {
+        font-size: 1.6rem;
+        line-height: 2.2rem;
+    }
+    h5 {
+        font-size: 1.4rem;
+        line-height: 1.9rem;
+    }
+    h6 {
+        font-size: 1.2rem;
+        line-height: 1.6rem;
+    }
+    p {
+        font-size: 1.6rem;
+        line-height: 2.2rem;
+        margin: 0 0 1em 0;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    ul,
+    ol {
+        display: block;
+        margin: 0 0 $font__margin-bottom $list__margin--left;
+        li {
+            display: block;
+            margin: 0 0 .5em 0;
+            position: relative;
+            &::before {
+                display: block;
+                position: absolute;
+                top: 0;
+                text-align: right;
+                color: #b8b8b8;
+            }
+        }
+    }
+    ul {
+        li {
+            &::before {
+                content: "—";
+                right: calc(100% + 1rem);
+            }
+        }
+    }
+    ol {
+        counter-reset: item;
+        li {
+            &::before {
+                content: counter(item) ".";
+                counter-increment: item;
+                right: calc(100% + .6rem);
+            }
+        }
+    }
+    blockquote {
+        margin: 0 0 $font__margin-bottom $blockquote__margin--left;
+        font-size: $blockquote__font-size;
+        line-height: $blockquote__line-height;
+        p {
+            font-size: $blockquote__font-size;
+            line-height: $blockquote__line-height;
+        }
+    }
+}

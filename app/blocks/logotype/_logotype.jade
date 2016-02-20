@@ -1,0 +1,8 @@
+mixin logotype(link)
+    .logotype&attributes(attributes)
+        - link = link || true
+        if link
+            a.logotype__link(href='home.html')
+                .logotype__image
+        else
+            .logotype__image

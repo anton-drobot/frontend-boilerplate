@@ -1,0 +1,93 @@
+// Размеры документа
+
+$screen__fluid: true !default; // Резиновый/Фиксированный макет
+
+$screen__width--default: 960px !default;
+$screen__width--min: 280px !default;
+$screen__width--max: 1440px !default;
+
+$screen__breakpoint--xs: 480px !default; // Smartphone
+$screen__breakpoint--s: 768px !default; // Tablet Portrait
+$screen__breakpoint--m: 1024px !default; // Tablet Landscape
+$screen__breakpoint--l: 1174px !default; // Desktop
+$screen__breakpoint--xl: 1400px !default; // Large Screen
+
+$wrapper__margin: 20px !default;
+
+
+// Глобальные настройки документа
+
+$root__box-sizing: border-box !default;
+$root__background-color: #fff !default;
+
+
+// Выделение текста
+
+$selection__background-color: #b3d4fc !default;
+$selection__color: #fff !default;
+$selection__text-shadow: none !default;
+
+
+// Плэйсхолдеры
+
+$placeholder__color--default: #777 !default;
+$placeholder__color--active: #c6c6c6 !default;
+
+
+// Сетка
+
+$grid__columns: 12 !default;
+$grid__gutter: 20px !default;
+$grid__rtl: false;
+$grid__old-browsers: false;
+
+
+// Типографика
+
+$font__text-rendering: geometricPrecision !default; // optimizeLegibility
+$font__family--default: Arial, Tahoma, sans-serif !default;
+$font__family--monospace: Menlo, Monaco, Consolas, "Courier New", monospace !default;
+$font__color--base: #000 !default;
+$font__root-size: 10px !default;
+$font__root-line-height: 1.35 !default;
+$font__size--base: 1.6rem !default;
+$font__size--small: 75% !default;
+$font__line-height: 2.2rem !default;
+$font__margin-bottom: 1.6rem !default;
+
+
+// Формы
+
+
+$form__font-size: $font__size--base !default;
+$form__font-line-height: $font__line-height !default;
+$form__padding-top: 2px;
+$form__padding-right: 2px;
+$form__padding-bottom: 2px;
+$form__padding-left: 2px;
+$form__border-width: 1px;
+$form__input-min-height: calc(#{$form__font-line-height} + #{$form__border-width} * 2 + #{$form__padding-top} + #{$form__padding-bottom});
+$form__textarea-min-height: calc(#{$form__font-line-height} * 4 + #{$form__border-width} * 2 + #{$form__padding-top} + #{$form__padding-bottom});
+
+
+// Цитата
+
+$blockquote__font-size: 2rem;
+$blockquote__line-height: 2.7rem;
+$blockquote__margin--left: 6.2rem;
+
+
+// Списки
+
+$list__margin--left: 6.2rem;
+
+
+// Ссылки
+
+$link__color--default: #368cda !default;
+$link__color--hover: #2f64b6 !default;
+$link__color--active: #da2f0d !default;
+$link__underline--type: border !default; // default, border, none
+$link__underline--opacity-default: .3 !default;
+$link__underline--opacity-hover: .5 !default;
+$link__transition-timing-function: ease-in-out;

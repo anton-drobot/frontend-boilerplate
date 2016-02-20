@@ -1,33 +1,14 @@
-include ../helpers/_variables
-include ../helpers/_mixins
+include ../partials/_blocks
 
 doctype html
-html.no-js(lang='ru')
-    head
-        meta(charset='utf-8')
-        meta(http-equiv='x-ua-compatible' content='ie=edge')
+html(lang='ru')
+    include ../partials/_head
 
-        block head
-        title=pageTitle
-
-        meta(name='description' content=pageDescription)
-        meta(name='keywords' content=pageKeywords)
-        meta(name='copyright' content=pageCopyright)
-        meta(name='viewport' content='width=device-width, initial-scale=1')
-
-        link(rel='stylesheet' href='assets/css/main.css')
-        script(src='assets/libraries/supports/supports.js')
     body
-        include ../blocks/_header
+        +header
 
         block content
 
-        include ../blocks/_footer
+        +footer
 
-        block scriptsBefore
-
-        script(src='//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js')
-        script window.jQuery || document.write('<script src="assets/libraries/jquery/jquery-2.1.4.min.js"><\/script>')
-        script(src='assets/js/main.js')
-
-        block scriptsAfter
+        include ../partials/_scripts

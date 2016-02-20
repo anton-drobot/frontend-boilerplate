@@ -1,0 +1,9 @@
+include ../logotype/_logotype
+include ../wrapper/_wrapper
+
+mixin header()
+    header.header&attributes(attributes)
+        +wrapper
+            +logotype
+
+            h1 Frontend Boilerplate

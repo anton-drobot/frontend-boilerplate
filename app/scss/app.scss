@@ -1,0 +1,57 @@
+@import "system/variables";
+@import "system/mixins";
+
+@import "core/lost";
+
+@import "common/*";
+@import "base-blocks/*";
+
+body {
+    @if $screen__fluid == false {
+        min-width: $screen__width--default + ($wrapper__margin * 2);
+    }
+    background: #fff;
+    font-size: $font__size--base;
+    line-height: $font__line-height;
+}
+
+a {
+    color: $link__color--default;
+    &:hover {
+        color: $link__color--hover;
+    }
+    &:active {
+        color: $link__color--active;
+    }
+    @if $link__underline--type == default {
+        text-decoration: underline;
+        transition: color .3s $link__transition-timing-function;
+        &:hover,
+        &:active {
+            text-decoration: underline;
+            transition: none;
+        }
+    } @else if $link__underline--type == border {
+        @include underline();
+        @include underline-actions();
+        text-decoration: none;
+        &:hover,
+        &:active {
+            text-decoration: none;
+        }
+    } @else if $link__underline--type == none {
+        text-decoration: none;
+        transition: color .3s $link__transition-timing-function;
+        &:hover,
+        &:active {
+            text-decoration: none;
+            transition: none;
+        }
+    }
+}
+
+img {
+    display: block;
+}
+
+@import "../blocks/**/*";

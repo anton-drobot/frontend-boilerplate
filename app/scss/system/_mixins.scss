@@ -1,0 +1,55 @@
+@mixin clearfix {
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+@mixin icon($sprite) {
+    @include sprite-position($sprite);
+    @include sprite-width($sprite);
+    @include sprite-height($sprite);
+}
+
+@mixin placeholder($color: $placeholder__color--default, $active-color: $placeholder__color--active) {
+    &::placeholder {
+        color: $color;
+        text-overflow: ellipsis;
+    }
+    &.placeholder {
+        color: $color;
+        text-overflow: ellipsis;
+    }
+    &:focus::placeholder {
+        color: $active-color;
+    }
+    &.placeholder:focus {
+        color: $active-color;
+    }
+}
+
+@mixin visually-hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    &.focusable {
+        &:active,
+        &:focus {
+            clip: auto;
+            height: auto;
+            margin: 0;
+            overflow: visible;
+            position: static;
+            width: auto;
+        }
+    }
+}

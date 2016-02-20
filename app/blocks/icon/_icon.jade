@@ -1,0 +1,7 @@
+mixin icon(name)
+    span(class='icon icon--#{name}')&attributes(attributes)
+
+mixin svgIcon(name)
+    svg(class='icon icon--#{name}')&attributes(attributes)
+        use(xlink:href='assets/images/icons.svg#icon--#{name}')
+

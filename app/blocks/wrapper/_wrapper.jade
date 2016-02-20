@@ -1,0 +1,5 @@
+mixin wrapper(relative)
+    - var relativeClass = relative ? 'wrapper__margin--relative' : '';
+    .wrapper&attributes(attributes)
+        .wrapper__margin(class=relativeClass)
+            block
