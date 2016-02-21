@@ -1,11 +1,5 @@
 // sanitize.css v3.0.0 | CC0 1.0 Public Domain | github.com/10up/sanitize.css
 
-$root-cursor: default !default;
-$root-line-height: 1.5 !default;
-
-$background-repeat: no-repeat !default;
-$media-element-vertical-align: middle !default;
-
 /*
  * Normalization
  */
@@ -125,7 +119,6 @@ textarea {
 // specify the core styles of all elements
 
 * {
-    background-repeat: $background-repeat;
     margin: 0;
     padding: 0;
 }
@@ -136,7 +129,6 @@ textarea {
     background-color: $root__background-color;
     box-sizing: $root__box-sizing;
     color: $font__color--base;
-    cursor: $root-cursor;
     font: #{$font__root-size}/#{$font__root-line-height} $font__family--default;
     text-rendering: $font__text-rendering;
 }
@@ -149,7 +141,7 @@ iframe,
 img,
 svg,
 video {
-    vertical-align: $media-element-vertical-align;
+    vertical-align: middle;
 }
 
 // specify the inherited color and font of form elements
