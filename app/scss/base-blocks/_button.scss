@@ -10,6 +10,7 @@
     text-align: center;
     text-decoration: none;
     transition: color .3s $link__transition-timing-function, background-color .3s $link__transition-timing-function, border-color .3s $link__transition-timing-function;
+    cursor: pointer;
     &:hover,
     &:focus {
         background: #f8f8f8;
