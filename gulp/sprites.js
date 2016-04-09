@@ -10,7 +10,7 @@ gulp.task('sprites', () => {
         .pipe(plumber({errorHandler: errorHandler('Error in \'sprites\' task')}))
         .pipe(spritesmith({
             imgName: 'sprites.png',
-            imgPath: '../images/sprites.png',
+            imgPath: '../images/icon/sprites.png',
             cssName: '_sprites-data.scss',
             cssFormat: 'scss',
             cssVarMap: function (sprite) {
@@ -19,7 +19,7 @@ gulp.task('sprites', () => {
         }));
 
     const imgStream = spriteData.img.pipe(gulp.dest('app/blocks/icon/images'));
-    const styleStream = spriteData.css.pipe(gulp.dest('app/blocks/icon'));
+    const styleStream = spriteData.css.pipe(gulp.dest('app/scss/system'));
 
     return merge(imgStream, styleStream);
 });

@@ -40,12 +40,4 @@ gulp.task('build', () => (
         'scripts',
         'copy'
     )
-    /*gulp.start(
-        'clean',
-        'styles:dependencies',
-        'jade',
-        'images:dependencies',
-        'scripts',
-        'copy'
-    )*/
 ));

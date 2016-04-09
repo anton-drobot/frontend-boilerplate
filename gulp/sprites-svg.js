@@ -29,7 +29,7 @@ gulp.task('sprites-svg', () => {
             id: 'sprite--%f',
             className: '.sprite--%f'
         }))
-        .pipe(gulpif(/\.scss$/, gulp.dest('app/blocks/icon')))
+        .pipe(gulpif(/\.scss$/, gulp.dest('app/scss/system/')))
         .pipe(gulpif(/\.svg$/, rename('sprites.svg')))
         .pipe(gulpif(/\.svg$/, gulp.dest('app/blocks/icon/images/')));
 
