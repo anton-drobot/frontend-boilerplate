@@ -53,3 +53,8 @@
         }
     }
 }
+
+@mixin font-size($font-size: $font__size--base) {
+    font-size: $font-size;
+    line-height: $font-size * $font__root-line-height;
+}

@@ -1,11 +1,30 @@
 .icon {
     display: inline-block;
     vertical-align: baseline;
-    background: transparent no-repeat;
-}
-
-.no-inlinesvg {
-    .icon {
-        background-image: url("../images/icons.png");
+    background: transparent url(block-image("sprites.png")) no-repeat;
+    @each $sprite in $spritesheet-sprites {
+        $sprite-name: str-slice(nth($sprite, 10), 8);
+        &--#{$sprite-name} {
+            @include icon($sprite)
+        }
     }
 }
+
+// Вариант 2 (с использованием svg-иконок)
+// .icon {
+//     display: inline-block;
+//     vertical-align: baseline;
+//     background: transparent no-repeat;
+// }
+//
+// .no-inlinesvg {
+//     .icon {
+//         background-image: url(block-image("sprites.png"));
+//         @each $sprite in $spritesheet-sprites {
+//             $sprite-name: str-slice(nth($sprite, 10), 8);
+//             &--#{$sprite-name} {
+//                 @include icon($sprite)
+//             }
+//         }
+//     }
+// }

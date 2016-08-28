@@ -1,0 +1,125 @@
+// Example Structure
+//
+// form
+//   row
+//     title
+//       label
+//     field
+//       control
+
+label {
+    display: inline-block;
+    cursor: pointer;
+}
+
+button {
+    cursor: pointer;
+}
+
+button,
+input,
+select,
+textarea {
+    outline: none;
+}
+
+[type="date"],
+[type="datetime"],
+[type="datetime-local"],
+[type="email"],
+[type="month"],
+[type="number"],
+[type="password"],
+[type="search"],
+[type="tel"],
+[type="text"],
+[type="time"],
+[type="url"],
+[type="week"],
+textarea {
+    @include placeholder();
+}
+
+[type="date"],
+[type="datetime"],
+[type="datetime-local"],
+[type="email"],
+[type="month"],
+[type="number"],
+[type="password"],
+[type="search"],
+[type="tel"],
+[type="text"],
+[type="time"],
+[type="url"],
+[type="week"],
+select {
+    min-height: $form__input-min-height;
+}
+
+textarea {
+    min-height: $form__textarea-min-height;
+    resize: vertical;
+}
+
+// Styles
+
+[type="date"],
+[type="datetime"],
+[type="datetime-local"],
+[type="email"],
+[type="month"],
+[type="number"],
+[type="password"],
+[type="search"],
+[type="tel"],
+[type="text"],
+[type="time"],
+[type="url"],
+[type="week"],
+select,
+textarea {
+    padding: $form__padding-top $form__padding-right $form__padding-bottom $form__padding-left;
+    background: #fff;
+    border: $form__border-width solid #b8b8b8;
+    border-radius: 0;
+    font-family: $font__family--default;
+    font-size: $font__size--base;
+    line-height: $font__line-height;
+    transition: border-color .3s ease-out;
+    &:focus {
+        border-color: #3496ff;
+        transition: none;
+    }
+}
+
+.form {
+    &__row {
+        margin-bottom: $font__line-height;
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+    &__title {}
+    &__label {}
+    &__field {}
+    &__control {
+        display: block;
+        width: 100%;
+        &--inline {
+            display: inline-block;
+        }
+    }
+    &__checkbox {
+        margin-right: 4px;
+    }
+    &__radio {
+        margin-right: 4px;
+    }
+    &__file {}
+    &__comment {
+        font-size: 1.4rem;
+        line-height: 2rem;
+        color: #aeaeae;
+    }
+}

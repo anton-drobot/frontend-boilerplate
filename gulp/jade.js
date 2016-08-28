@@ -1,3 +1,5 @@
+import fs from 'fs';
+import glob from 'glob';
 import gulp from 'gulp';
 import gutil from 'gulp-util';
 import gulpif from 'gulp-if';
@@ -37,3 +39,13 @@ gulp.task('jade', () => (
         .pipe(rename({dirname: '.'}))
         .pipe(gulp.dest('dist'))
 ));
+
+gulp.task('jade:blocks', () => {
+    glob('app/blocks/**/*.jade', function (er, files) {
+        files = files.map((file) => (
+            'include ../..' + file.substr(3)
+        ));
+
+        fs.writeFile('app/jade/partials/_blocks.jade', files.join('\r\n'));
+    });
+});

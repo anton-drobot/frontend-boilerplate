@@ -2,10 +2,17 @@ mixin grid()
     .grid&attributes(attributes)
         block
 
-mixin grid__col(columns, offset, media)
-    - columns = 'grid__col--' + (columns || 12)
-    - offset = (offset) ? 'grid__col--offset-' + offset : ''
-    - media = (media) ? 'grid__col--media-' + media : ''
-    - var classes = [columns, offset, media].filter(Boolean).join(' ')
-    .grid__col(class=classes)
+mixin grid__col(columns, offset, ...media)
+    - var classes = []
+    - classes.push('grid__col--' + (columns || 12))
+    - if (offset) classes.push('grid__col--offset-' + offset)
+    - if (media.length == 1) media.push(12)
+    - if (media.length == 2) media.push(0)
+    - for (var i = 0; i < media.length; i++) {
+    -     if (i % 3 == 2) {
+    -         classes.push('grid__col--media-' + media[i - 2] + '-to-' + media[i - 1])
+    -         if (media[i]) classes.push('grid__col--offset-' + media[i - 2] + '-' + media[i])
+    -     }
+    - }
+    .grid__col(class=classes)&attributes(attributes)
         block

@@ -1,0 +1,9 @@
+@function block-image($resource, $block: &) {
+    $string-selector: nth(simple_selectors($block), 1);
+
+    @if str-index($string-selector, ".") == 1 {
+        $string-selector: str-slice($string-selector, 2);
+    }
+
+    @return "../images/" + $string-selector + "/" + $resource;
+}

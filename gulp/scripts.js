@@ -14,8 +14,14 @@ function runWebpack(watch = false) {
         watch,
         bail: false,
         profile: true,
+        entry: {
+            app: './app/js/app.js',
+            common: [
+                'babel-polyfill'
+            ]
+        },
         output: {
-            filename: 'app.min.js',
+            filename: '[name].min.js',
             pathinfo: false
         },
         devtool: (gutil.env.sourcemaps || !gutil.env.debug) ? '#source-map' : '#cheap-module-eval-source-map',
@@ -45,6 +51,14 @@ function runWebpack(watch = false) {
             }]
         },
         plugins: gutil.env.debug ? [] : [
+            new webpack.DefinePlugin({
+                'process.env': {
+                    'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+                }
+            }),
+            new webpack.optimize.CommonsChunkPlugin({
+                name: 'common'
+            }),
             new webpack.optimize.DedupePlugin(),
             new webpack.optimize.UglifyJsPlugin({
                 compress: {
@@ -67,8 +81,7 @@ function runWebpack(watch = false) {
                         if (error) {
                             notifier.notify({
                                 title: error.message,
-                                message: `${error.line}:${error.column} ${error.source.trim()}`,
-                                //icon: path.join(__dirname, '../images/error-icon.png')
+                                message: `${error.line}:${error.column} ${error.source.trim()}`
                             });
                         }
                     }

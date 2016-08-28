@@ -3,6 +3,8 @@
         "node_modules/**/*"
     ],
     "presets": [
-        "es2015"
+        "latest",
+        "stage-0",
+        "react"
     ]
 }

@@ -19,24 +19,22 @@ gulp.task('images:dependencies', () => (
 gulp.task('default', () => (
     runSequence(
         'clean',
-        [
-            'styles:dependencies',
-            'jade'
-        ],
+        'jade:blocks',
+        'styles:dependencies',
         'images:dependencies',
+        'jade',
         'server',
         'watch'
     )
 ));
 
-gulp.task('build', () => (
+gulp.task('build', ['env'], () => (
     runSequence(
         'clean',
-        [
-            'styles:dependencies',
-            'jade'
-        ],
+        'jade:blocks',
+        'styles:dependencies',
         'images:dependencies',
+        'jade',
         'scripts',
         'copy'
     )
